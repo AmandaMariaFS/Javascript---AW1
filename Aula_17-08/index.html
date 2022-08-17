@@ -16,8 +16,13 @@
         var n2 = prompt("Valor 2:");
         n2 = parseFloat(n2);
 
-        var result = n1%n2;
-        alert(result);
+        var media = (n1+n2)/2;
+
+        if (media>5 && n1 > 0 && n2 > 0) {
+            alert("Aprovado");
+        } else {
+            alert("Reprovado");
+        }
     </script>
 </body>
 </html>
