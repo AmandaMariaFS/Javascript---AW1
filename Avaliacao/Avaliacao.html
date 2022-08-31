@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliacao</title>
+
+    <style>
+        h1 {
+            text-align: center;
+            margin-bottom: 90px;
+        }
+
+        .conteudo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        body {
+            background-color: #1BC6F2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Média escolar</h1>
+
+    <div class="conteudo">
+        <label for="name"> Nome do(a) estudante:  </label>
+        <input type="text" name="name" id="name"> <br>
+    </div>
+
+    <div class="conteudo">
+        <input type="radio" name="genero" id="Feminino"> <label for="Feminino">Feminino</label> 
+        <input type="radio" name="genero" id="Masculino"> <label for="Masculino">Masculino</label>
+        <input type="radio" name="genero" id="Outro"> <br> <label for="Outro">Outro</label>
+    </div>
+
+    <div class="conteudo">
+        <label for="nota1"> Primeira nota: </label>
+        <input type="number" name="name" id="nota1" max="10" min="0"> <br>
+    </div> 
+
+    <div class="conteudo">
+        <label for="nota2"> Segunda nota: </label>
+        <input type="number" name="name" id="nota2" max="10" min="0"> <br>
+    </div> 
+
+    <div class="conteudo">
+        <label for="nota3"> Terceira nota: </label>
+        <input type="number" name="name" id="nota3" max="10" min="0"> <br>
+    </div>   
+
+    <div class="conteudo"> <button onclick="main()">Analisar</button> <br> </div> 
+
+    <h2 id="resultado"></h2>
+    <script>
+
+        function main() {
+            console.log("foi");
+            var n1 = parseFloat(document.getElementById("nota1").value);
+            var n2 = parseFloat(document.getElementById("nota2").value);
+            var n3 = parseFloat(document.getElementById("nota3").value);
+            var media = ((n1+n2+n3)/3);
+            document.getElementById("resultado").innerHTML = document.getElementById("name").value + ", " + media + ", " + situacao(media);
+        }
+
+        function situacao(media) {
+            if (media < 6) {
+                if (document.getElementById('Feminino').checked) {
+                    return "Reprovada";
+                } else if (document.getElementById("Masculino").checked) {
+                    return "Reprovado";
+                } else {
+                    return "Reprovade";
+                }
+            } else {
+                if (document.getElementById("Feminino").checked) {
+                    return "Aprovada";
+                } else if (document.getElementById("Masculino").checked) {
+                    return "Aprovado";
+                } else {
+                    return "Aprovade";
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

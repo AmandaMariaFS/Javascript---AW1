@@ -1,0 +1,15 @@
+h1 {
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.conteudo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+body {
+    background-color: #1BC6F2;
+}
